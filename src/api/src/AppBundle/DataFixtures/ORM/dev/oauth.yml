@@ -1,0 +1,6 @@
+AppBundle\Entity\OAuth\Client:
+    client_1:
+        redirectUris: ['http://127.0.0.1:4200']
+        allowedGrantTypes: ['token', 'refresh_token', 'password']
+        randomId: et2w_mqpbdlsat2ySmxRbXVL478_sf
+        secret:   trsYtRVBkIUpbnmerwiUoPgqwcvaIa

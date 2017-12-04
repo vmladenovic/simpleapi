@@ -1,0 +1,8 @@
+AppBundle\Entity\User\User:
+    user_{0..30}:
+        email: <email()>
+        plainPassword: 'AAAA1111'
+        role: ['ROLE_USER']
+        enabled: true
+        username: <firstname()>-<lastname()>
+        profile: '@profile_<current()>'

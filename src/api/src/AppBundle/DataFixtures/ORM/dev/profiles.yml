@@ -1,0 +1,4 @@
+AppBundle\Entity\User\Profile:
+  profile_{0..30}:
+      firstName: <firstName()>
+      lastName:  <lastName()>

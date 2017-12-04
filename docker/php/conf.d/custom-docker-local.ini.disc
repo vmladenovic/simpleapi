@@ -1,0 +1,13 @@
+; Enable and set xdebug
+; Note: Copy and rename file without .dist
+; Note2: if you not need xdebug commented or delete content into .ini file
+[Xdebug]
+error_reporting = E_ALL
+display_startup_errors = On
+display_errors = On
+xdebug.idekey="PHPSTORM"
+xdebug.remote_enable=1
+xdebug.remote_connect_back=0
+xdebug.remote_port=9001
+; remember to change this to your local ip address
+xdebug.remote_host=192.168.88.30

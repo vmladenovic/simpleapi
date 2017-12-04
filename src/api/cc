@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "Cache clean started"
+rm -rf var/cache/*
+chmod 777 -R var/
+bin/console ca:cl
+bin/console doc:sch:up --force
+chmod 777 -R var/
+echo "Cache clean finished"

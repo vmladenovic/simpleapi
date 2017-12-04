@@ -1,0 +1,34 @@
+sa_nginx:
+  container_name: sa_nginx
+  image: nginx:1.13.0
+  ports:
+    - "80:80"
+  volumes:
+    - ./src:/app
+    - ./docker/nginx/site.conf:/etc/nginx/conf.d/site.conf
+  links:
+    - sa_php7
+sa_php7:
+  container_name: sa_php7
+  build: ./docker/php
+  links:
+    - sa_mysql
+  volumes:
+    - ./src:/app
+    - ./docker/php/zshrc.tpl:/root/.zshrc
+    - ./docker/php/zshrc.tpl:/simpleapi/.zshrc
+    - ./docker/php/conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    - ./docker/php/conf.d/custom-docker-local.ini:/usr/local/etc/php/conf.d/custom-docker-local.ini
+
+sa_mysql:
+  container_name: sa_mysql
+  image: mysql:5.6
+  volumes:
+    - db_data:/var/lib/mysql_dev
+  ports:
+    - 3307:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: simpleapi
+    MYSQL_DATABASE: simpleapi
+    MYSQL_USER: simpleapi
+    MYSQL_PASSWORD: simpleapi

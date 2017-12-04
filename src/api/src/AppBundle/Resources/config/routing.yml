@@ -1,0 +1,11 @@
+simpleapi_rest_user:
+    type: rest
+    prefix: /v1/users
+    resource: "@AppBundle/Controller/User/UserController.php"
+    name_prefix:  api_1_
+
+simpleapi_rest_oauth:
+    type: rest
+    prefix: /v1/oauth
+    resource: "@AppBundle/Controller/User/OAuthController.php"
+    name_prefix:  api_1_
